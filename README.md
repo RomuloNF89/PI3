@@ -1,5 +1,14 @@
 # pi3
 Projeto Integrador III
+
+# Subindo codigo para github
+```
+git add .
+git commit -m "descricao commit"
+git pull origin main
+git push origin main
+
+```
 # Instalação
 ```
 git clone https://github.com/Ferreiramg/pi3.git
