@@ -36,8 +36,7 @@ namespace PI3.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=RnF081092;database=cadastro_estudante");
+                optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=root;database=cadastro_estudante");
             }
         }
 
@@ -48,7 +47,7 @@ namespace PI3.Models
                 entity.HasKey(e => e.CodArea)
                     .HasName("PRIMARY");
 
-                entity.ToTable("area");
+                entity.ToTable("Area");
 
                 entity.Property(e => e.Nome).HasMaxLength(30);
             });
@@ -58,7 +57,7 @@ namespace PI3.Models
                 entity.HasKey(e => e.CodBolsa)
                     .HasName("PRIMARY");
 
-                entity.ToTable("bolsa");
+                entity.ToTable("Bolsa");
 
                 entity.Property(e => e.Ano).HasColumnType("year");
 
@@ -72,7 +71,7 @@ namespace PI3.Models
                 entity.HasKey(e => e.CodConcedente)
                     .HasName("PRIMARY");
 
-                entity.ToTable("concedente");
+                entity.ToTable("Concedente");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
@@ -97,7 +96,7 @@ namespace PI3.Models
                 entity.HasKey(e => e.CodCurso)
                     .HasName("PRIMARY");
 
-                entity.ToTable("curso");
+                entity.ToTable("Curso");
 
                 entity.HasIndex(e => e.CodArea)
                     .HasName("CodArea");
@@ -146,7 +145,7 @@ namespace PI3.Models
                 entity.HasKey(e => e.CodDepartamento)
                     .HasName("PRIMARY");
 
-                entity.ToTable("departamento");
+                entity.ToTable("Departamento");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
@@ -157,7 +156,7 @@ namespace PI3.Models
             {
                 entity.HasNoKey();
 
-                entity.ToView("diferenca");
+                entity.ToView("Diferenca");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
@@ -169,7 +168,7 @@ namespace PI3.Models
                 entity.HasKey(e => e.CodDisciplina)
                     .HasName("PRIMARY");
 
-                entity.ToTable("disciplina");
+                entity.ToTable("Disciplina");
 
                 entity.Property(e => e.Nome).HasMaxLength(30);
             });
@@ -179,7 +178,7 @@ namespace PI3.Models
                 entity.HasKey(e => e.MatEstudante)
                     .HasName("PRIMARY");
 
-                entity.ToTable("estudante");
+                entity.ToTable("Estudante");
 
                 entity.HasIndex(e => e.CodCurso)
                     .HasName("CodCurso");
@@ -211,7 +210,7 @@ namespace PI3.Models
                 entity.HasKey(e => new { e.MatProfessor, e.CodDisciplina })
                     .HasName("PRIMARY");
 
-                entity.ToTable("leciona");
+                entity.ToTable("Leciona");
 
                 entity.HasIndex(e => e.CodDisciplina)
                     .HasName("CodDisciplina");
@@ -234,7 +233,7 @@ namespace PI3.Models
                 entity.HasKey(e => new { e.MatEstudante, e.CodBolsa })
                     .HasName("PRIMARY");
 
-                entity.ToTable("pode_ser");
+                entity.ToTable("Pode_ser");
 
                 entity.HasIndex(e => e.CodBolsa)
                     .HasName("CodBolsa");
@@ -265,7 +264,7 @@ namespace PI3.Models
                 entity.HasKey(e => new { e.CodBolsa, e.CodConcedente })
                     .HasName("PRIMARY");
 
-                entity.ToTable("possui");
+                entity.ToTable("Possui");
 
                 entity.HasIndex(e => e.CodConcedente)
                     .HasName("CodConcedente");
@@ -288,7 +287,7 @@ namespace PI3.Models
                 entity.HasKey(e => e.MatProfessor)
                     .HasName("PRIMARY");
 
-                entity.ToTable("professor");
+                entity.ToTable("Professor");
 
                 entity.Property(e => e.Email)
                     .IsRequired()
@@ -312,7 +311,7 @@ namespace PI3.Models
                 entity.HasKey(e => new { e.CodDisciplina, e.CodCurso })
                     .HasName("PRIMARY");
 
-                entity.ToTable("tem");
+                entity.ToTable("Tem");
 
                 entity.HasIndex(e => e.CodCurso)
                     .HasName("CodCurso");
@@ -335,7 +334,7 @@ namespace PI3.Models
                 entity.HasKey(e => e.CodTipo)
                     .HasName("PRIMARY");
 
-                entity.ToTable("tipo");
+                entity.ToTable("Tipo");
 
                 entity.Property(e => e.Nome).HasMaxLength(30);
             });
@@ -345,7 +344,7 @@ namespace PI3.Models
                 entity.HasKey(e => new { e.CodDepartamento, e.MatProfessor })
                     .HasName("PRIMARY");
 
-                entity.ToTable("trabalha");
+                entity.ToTable("Trabalha");
 
                 entity.HasIndex(e => e.MatProfessor)
                     .HasName("MatProfessor");
