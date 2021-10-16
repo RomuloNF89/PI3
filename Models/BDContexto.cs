@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-
+using Microsoft.Extensions.Configuration;
 namespace PI3.Models
 {
     public partial class BDContexto : DbContext
@@ -9,10 +8,19 @@ namespace PI3.Models
         public BDContexto()
         {
         }
-
-        public BDContexto(DbContextOptions<BDContexto> options)
+        public IConfiguration Configuration { get; }
+        public BDContexto(DbContextOptions<BDContexto> options, IConfiguration configuration)
             : base(options)
         {
+            Configuration = configuration;
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connection = Configuration["ConnectionStrings:Default"];
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseMySQL(connection);
+            }
         }
 
         public virtual DbSet<Area> Area { get; set; }
@@ -32,13 +40,6 @@ namespace PI3.Models
         public virtual DbSet<Tipo> Tipo { get; set; }
         public virtual DbSet<Trabalha> Trabalha { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=root;database=cadastro_estudante");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
