@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabela e Formulário Estudante</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="./styles/tabela.css">                  <!-- chamada do arquivo .css*/ -->
+        <link rel="stylesheet" href="./styles/formulario.css">
+    </head>
+
+    <body>
+        <h1>Tabela e Formulário Estudante</h1>
+        <form id="formulario" name="formulario" autocomplete="on" action="http://www.google.com" method="get" target="_blank">
+            <table>
+                <tr>
+                    <td><label>Nome:</label></td>                                                                                               <!-- campo texto -->
+                    <td><input type="text" id="id_nome" name="nome" placeholder="Digite o seu nome" size="25" required></td>
+                </tr>
+                <tr>
+                    <td><label>Idade:</label></td>
+                    <td><input type="number" id="id_idade" name="idade" placeholder="Digite sua idade" size="25" required></td>                 <!-- campo numero -->     
+                </tr>
+                <tr>
+                    <td><label>Data de Ingresso:</label></td>
+                    <td><input type="date" id="id_data" name="data" size="25" placeholder="Digite uma data"></td>                                   <!-- campo data -->
+                </tr>
+                <tr>
+                    <td><label>Curso:</label></td>
+                    <td>
+                        <select id="id_curso" name="curso" required>
+                            <option value="1">Analise e desenvolvimento de sistemas</option>                                                         <!-- campo seleção -->
+                            <option value="2" >Ciência da Computação</option>
+                            <option value="3" >sistemas de informação</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="disciplina">Disciplinas:</td>
+                    <td>
+                        <input type="checkbox" name="disciplinas" value="1"><span class="disciplina">Cálculo I</span><br>
+                        <input type="checkbox" name="disciplinas" value="1"><span class="disciplina">Lógica Matemática</span><br>
+                        <input type="checkbox" name="disciplinas" value="1"><span class="disciplina">Sistemas Operacionais</span><br>                                                   <!-- campo checkbox -->
+                        <input type="checkbox" name="disciplinas" value="1"><span class="disciplina">Análise de Algoritmos</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="radio">Graduado:</td>
+                    <td>
+                        <input type="radio" name="graduado" value="1" ><span class="radio">Sim</span><br>
+                        <input type="radio" name="graduado" value="2" ><span class="radio">Não</span>                                                                              <!-- campo radiobutton -->
+                    </td>
+                </tr>
+            </table>
+        
+        <button class="botao" type="submit">Salvar</button>                                                           <!-- Botão Salvar -->
+        <br><br>    
+
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>                             <!-- Cabeçalho da tabela -->
+                    <th>Curso</th>
+                    <th>Graduado</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Emilly</td>
+                    <td class="numero">23</td>                                                <!-- Tabela em si-->
+                    <td>Analise e desenvolvimento de sistemas</td>
+                    <td>Sim</td>
+                </tr>
+    
+                <tr>
+                    <td>Jasmine</td>
+                    <td class="numero">19</td>
+                    <td>Analise e desenvolvimento de sistemas</td>                            <!-- Tabela em si-->
+                    <td>Não</td>
+                </tr>
+    
+                <tr>
+                    <td>Filip</td>
+                    <td class="numero">21</td>                                               <!-- Tabela em si-->
+                    <td>Ciência da Computação</td>
+                    <td>Não</td>
+                </tr>
+    
+                <tr>
+                    <td>José</td>
+                    <td class="numero">33</td>                                               <!-- Tabela em si-->
+                    <td>sistemas de informação</td>
+                    <td>Sim</td>
+                </tr>
+    
+                <tr>
+                    <td>Cauã</td>
+                    <td class="numero">41</td>                                               <!-- Tabela em si-->
+                    <td>Analise e desenvolvimento de sistemas</td>
+                    <td>Não</td>
+                </tr>
+
+                <tr>
+                    <td>Isabela</td>
+                    <td class="numero">25</td>                                               <!-- Tabela em si-->
+                    <td>sistemas de informação</td>
+                    <td>Não</td>
+                </tr>
+
+                <tr>
+                    <td>Luis</td>
+                    <td class="numero">20</td>                                               <!-- Tabela em si-->
+                    <td>Analise e desenvolvimento de sistemas</td>
+                    <td>Sim</td>
+                </tr>
+
+                <tr>
+                    <td>Marcos</td>
+                    <td class="numero">29</td>                                               <!-- Tabela em si-->
+                    <td>sistemas de informação</td>
+                    <td>Sim</td>
+                </tr>
+
+                <tr>
+                    <td>Samuel</td>                                                         
+                    <td class="numero">31</td>                                               <!-- Tabela em si-->
+                    <td>Analise e desenvolvimento de sistemas</td>
+                    <td>Não</td>
+                </tr>
+
+                <tr>
+                    <td>Kauê</td>
+                    <td class="numero">22</td>                                               <!-- Tabela em si-->
+                    <td>sistemas de informação</td>
+                    <td>Sim</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
