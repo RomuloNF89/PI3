@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabela e Formulário Curso</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="./styles/tabela.css">                              <!-- chamada do arquivo .css*/ -->
+        <link rel="stylesheet" href="./styles/formulario.css">
+    </head>
+
+    <body>
+        <h1>Tabela e Formulário Curso</h1>
+        <form id="formulario" name="formulario" autocomplete="on" action="http://www.google.com" method="get" target="_blank">
+            <table>
+                <tr>
+                    <td><label>Nome:</label></td>
+                    <td><input type="text" id="id_nome" name="nome" placeholder="Digite o seu nome" size="25" required></td>                <!-- campo nome -->
+                </tr>
+                <tr>
+                    <td><label>Carga Horária:</label></td>
+                    <td><input type="number" id="id_carga" name="carga"  placeholder="Digite sua carga horária" size="25" required></td>      <!-- campo numero -->
+                </tr>
+                <tr>
+                    <td><label>Área :</label></td>
+                    <td>
+                        <select id="id_area" name="area" required>
+                            <option value="1">Exatas</option>                                                                                <!-- campo seleção -->
+                            <option value="2">Saúde</option>
+                            <option value="3">Humanas</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="radio">Tipo:</td>
+                    <td>
+                        <input type="radio" name="tipo" value="1" ><sapn class="radio">Presencial diurno</sapn><br>
+                        <input type="radio" name="tipo" value="1" ><span class="radio">Presencial noturno</span><br>                                               <!-- campo radiobutton -->
+                        <input type="radio" name="tipo" value="1" ><span class="radio">Semi-presencial</span><br>
+                        <input type="radio" name="tipo" value="1" ><sapn class="radio">À distância</sapn>
+                    </td>
+                </tr>
+            </table>
+
+        <button class="botao" type="submit">Salvar</button>                                                                                               <!-- Botão salvar -->
+        <br><br>   
+        
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Carga Horária</th>                                              <!-- Cabeçalho da tabela -->
+                    <th>Área</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Analise e desenvolvimento de sistemas</td>                       <!-- Tabela em si-->
+                    <td class="numero">40</td>
+                    <td>Exatas</td>
+                </tr>
+    
+                <tr>
+                    <td>Engenharia civil</td>                                            <!-- Tabela em si-->
+                    <td class="numero">80</td>
+                    <td>Exatas</td>
+                </tr>
+    
+                <tr>
+                    <td>Medicina veterinaria</td>
+                    <td class="numero">100</td>                                          <!-- Tabela em si-->
+                    <td>Saúde</td>
+                </tr>
+    
+                <tr>
+                    <td> Ciência da Computação</td>
+                    <td class="numero">80</td>                                          <!-- Tabela em si-->
+                    <td>Exatas</td>
+                </tr>
+    
+                <tr>
+                    <td>Ciencias humanas</td>
+                    <td class="numero">40</td>                                         <!-- Tabela em si-->
+                    <td>Humanas</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
