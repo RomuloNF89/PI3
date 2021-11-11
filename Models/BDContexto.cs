@@ -196,6 +196,8 @@ namespace PI3.Models
                     .IsRequired()
                     .HasMaxLength(30);
 
+               entity.Property(e => e.Deleted).HasColumnName("deleted_at");
+
                 entity.Property(e => e.Telefone)
                     .IsRequired()
                     .HasMaxLength(11);

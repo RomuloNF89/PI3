@@ -17,8 +17,10 @@ namespace PI3.Models
         public string Telefone { get; set; }
         public string Endereco { get; set; }
         public string Email { get; set; }
-        public bool RespFinanceiro { get; set; }
+        public bool? RespFinanceiro { get; set; }
         public int? CodCurso { get; set; }
+
+        public string? Deleted { get; set; }
 
         public virtual Curso CodCursoNavigation { get; set; }
         public virtual ICollection<PodeSer> PodeSer { get; set; }

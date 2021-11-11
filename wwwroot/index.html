@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tabela e Formulário Estudante</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card d-flex aling-center">
+                    <div class="card-header">
+                        Tabela e Formulário Estudante
+                    </div>
+                    <div class="card-body">
+                        <form id="formulario_estudante" autocomplete="off">
+                            <input type="hidden" value="0" name="matEstudante" id="id_matEstudante" />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row  p-2">
+                                        <div class="col-md">
+                                            <label>Nome:</label>
+                                            <input class="form-control" type="text" id="id_nome" name="nome"
+                                                placeholder="Digite o seu nome" size="25" required>
+                                        </div>
+                                    </div>
+                                    <div class="row  p-2">
+                                        <div class="col-md">
+                                            <label>Idade:</label>
+                                            <input class="form-control" type="number" id="id_idade" name="idade"
+                                                placeholder="Digite sua idade" required>
+                                        </div>
+                                    </div>
+                                    <!--   <div class="row">
+                                        <div class="col-md p-2">
+                                            <label>Data de Ingresso:</label>
+                                            <input class="form-control" type="date" id="id_data" name="data" size="25">
+                                        </div>
+                                    </div> -->
+                                    <div class="row  p-2">
+                                        <div class="col-md">
+                                            <label>Cursos:</label>
+                                            <br />
+                                            <select class="form-control" id="id_curso" name="curso" required>
+                                                <option value="">Selecione o Curso</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row  p-2">
+                                        <div class="col-md">
+                                            <label>Telefone:</label>
+                                            <input class="form-control" type="text" id="id_tel" name="telefone"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="row p-2">
+                                        <div class="col-md">
+                                            <label>Email:</label>
+                                            <input class="form-control" type="email" id="id_email" name="email"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="row p-2">
+                                        <div class="col-md">
+                                            <label>Endereço:</label>
+                                            <input class="form-control" type="text" id="id_endereco" name="endereco">
+                                        </div>
+                                    </div>
+                                    <div class="row p-2">
+                                        <div class="col-md">
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" name="graduado" type="checkbox"
+                                                    id="id_graduado">
+                                                <label class="form-check-label" for="id_graduado">Graduado</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-md-12 d-flex">
+                                    <button type="button" onclick="Estudante.salvar(event)" style="max-width: 200px;"
+                                        class="btn btn-primary" id="salvar_estudante">Salvar</button>
+                                    <span style="flex:1"></span>
+                                    <button type="reset" style="max-width: 200px;"
+                                        class="btn btn-default float-right">Limpar</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="_actived-tab" data-bs-toggle="tab"
+                                    data-bs-target="#_actived" type="button" role="tab" aria-controls="_actived"
+                                    aria-selected="true">Ativos</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="_deleted-tab" data-bs-toggle="tab"
+                                    data-bs-target="#_deleted" type="button" role="tab" aria-controls="_deleted"
+                                    aria-selected="false">Inativos</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="_actived" role="tabpanel"
+                                aria-labelledby="ative-tab">
+                                <div class="table-responsive">
+                                    <table id="grid" class="table table-bordered table-striped table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th style="cursor: pointer;" onclick="sortTable(event,1)">Nome <i
+                                                        class="bi bi-chevron-down"></i>
+                                                </th>
+                                                <th style="cursor: pointer;" onclick="sortTable(event,2)">Idade <i
+                                                        class="bi bi-chevron-down"></i>
+                                                </th>
+                                                <th style="cursor: pointer;" onclick="sortTable(event,3)">Email <i
+                                                        class="bi bi-chevron-down"></i>
+                                                </th>
+                                                <th>Curso</th>
+                                                <th>Graduado</th>
+                                                <th colspan="2" class="text-center">Ações</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- TABELA INATIVOS -->
+                            <div class="tab-pane fade" id="_deleted" role="tabpanel" aria-labelledby="delete-tab">
+                                <div class="table-responsive p-4">
+                                    <table id="grid_inativo" class="table table-bordered table-striped table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th style="cursor: pointer;" onclick="sortTable(event,1)">Nome <i
+                                                        class="bi bi-chevron-down"></i>
+                                                </th>
+                                                <th style="cursor: pointer;" onclick="sortTable(event,2)">Idade <i
+                                                        class="bi bi-chevron-down"></i>
+                                                </th>
+                                                <th style="cursor: pointer;" onclick="sortTable(event,3)">Email <i
+                                                        class="bi bi-chevron-down"></i>
+                                                </th>
+                                                <th>Curso</th>
+                                                <th>Graduado</th>
+                                                <th>Inativado em:</th>
+                                                <th colspan="2" class="text-center">Ações</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/estudantes.js"></script>
+    <script src="./js/cursos.js"></script>
+    <script src="./js/disciplina.js"></script>
+    <script>
+        $(document).ready(function () {
+            Number.prototype.currency = function () {
+                return this.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            };
+            Estudante.run();
+
+        });
+
+        function formValidate(event, form) {
+            let errors = false;
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
+                errors = true;
+            }
+            form.classList.add("was-validated");
+            return errors && (!event.detail || event.detail === 1);
+        };
+
+        function sortTable(event, n) {
+            $(event.target).closest('i').toggleClass('bi-chevron-down bi-chevron-up')
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = $(event.target).closest('table')[0];
+            switching = true;
+            dir = "asc";
+            while (switching) {
+                // Start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++) {
+
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("td")[n];
+                    y = rows[i + 1].getElementsByTagName("td")[n];
+
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -44,7 +44,7 @@ namespace PI3
             {
                 FileProvider = new PhysicalFileProvider(
                    Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
-                RequestPath = "/",
+                RequestPath = "/home",
                 EnableDefaultFiles = true
             });
 
