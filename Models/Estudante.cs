@@ -20,7 +20,7 @@ namespace PI3.Models
         public bool? RespFinanceiro { get; set; }
         public int? CodCurso { get; set; }
 
-        public string? Deleted { get; set; }
+        public string Deleted { get; set; }
 
         public virtual Curso CodCursoNavigation { get; set; }
         public virtual ICollection<PodeSer> PodeSer { get; set; }

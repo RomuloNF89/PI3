@@ -19,6 +19,13 @@ namespace PI3.AddControllers
             contexto = bdContexto;
         }
 
+ public Disciplina Store([FromBody] Disciplina model)
+        {
+            contexto.Disciplina.Add(model);
+            contexto.SaveChanges();
+
+            return contexto.Disciplina.FirstOrDefault(c => c.CodDisciplina == model.CodDisciplina);
+        }
         [HttpGet]
         public List<Disciplina> Listar()
         {

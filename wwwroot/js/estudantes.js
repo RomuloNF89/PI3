@@ -62,16 +62,12 @@ const Estudante = {
                 .append($('<td></td>').html(dados.codCursoNavigation.nome))
                 .append($('<td></td>').html(dados.graduado ? 'Sim' : 'Não'))
                 .append($('<td></td>').html(`<a href="#" onclick="Estudante.edit(event)"> <span class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></span></a>`))
-                .append($('<td></td>').html(`<a href="#" onclick="Estudante.apagar(event)"><span class="fa fa-trash-o fa-lg text-danger" aria-hidden="true"></span></a>`))
+                .append($('<td></td>').html(`<a href="#" onclick="Estudante.apagarLogic(event)"><span class="fa fa-trash-o fa-lg text-danger" aria-hidden="true"></span></a>`))
             );
         }
     },
     renderTableInative(response) {
 
-        if (response.length === 0) {
-            $('#grid_inativo').html('<tr><td> Não existem dados!</td></tr>');
-            return null;
-        }
         for (i = 0; i < response.length; i++) {
             let dados = response[i];
             $('#grid_inativo').find(`#${dados.matEstudante}`).remove();
@@ -83,7 +79,7 @@ const Estudante = {
                 .append($('<td></td>').html(dados.codCursoNavigation.nome))
                 .append($('<td></td>').html(dados.graduado ? 'Sim' : 'Não'))
                 .append($('<td></td>').html(dados.deleted))
-                .append($('<td></td>').html(`<a href="#" onclick="Estudante.restore(event)"> <span class="fa fa-back fa-lg" aria-hidden="true"></span></a>`))
+                .append($('<td></td>').html(`<a href="#" onclick="Estudante.restore(event)"> <span class="fa fa-undo fa-lg text-info" aria-hidden="true"></span></a>`))
             );
         }
     },

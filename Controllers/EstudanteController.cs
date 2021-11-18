@@ -88,6 +88,7 @@ namespace PI3.AddControllers
                 Email = c.Email,
                 Endereco = c.Endereco,
                 Graduado = c.Graduado,
+                Deleted = c.Deleted,
                 CodCursoNavigation = new Curso
                 {
                     CodCurso = c.CodCursoNavigation.CodCurso,
